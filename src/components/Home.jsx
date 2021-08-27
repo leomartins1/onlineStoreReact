@@ -6,6 +6,7 @@ import { getProductsFromCategoryAndQuery } from '../services/api';
 import Search from './Search';
 import ProductCard from './ProductCard';
 import CategoriesList from './CategoriesList';
+import CartButton from './CartButton';
 
 class Home extends React.Component {
   constructor(props) {
@@ -44,14 +45,16 @@ class Home extends React.Component {
   }
 
   render() {
-    const { addToCart, countCartItems } = this.props;
+    const { addToCart, countCartItems, counter } = this.props;
     const { results, showCard } = this.state;
     return (
       <div>
-        <div className="d-flex justify-content-evenly">
+        <div className="navBar">
+          <h1 className="">Online Store</h1>
           <Search onClick={ this.handleClick } onChange={ this.handleChange } />
+          <CartButton counter={ counter } />
         </div>
-        <div className="d-flex">
+        <div className="">
           <CategoriesList onClick={ this.handleCategoriesList } />
           { (showCard && <ProductCard
             results={ results }
@@ -67,6 +70,7 @@ class Home extends React.Component {
 Home.propTypes = {
   addToCart: PropTypes.func.isRequired,
   countCartItems: PropTypes.func.isRequired,
+  counter: PropTypes.number.isRequired,
 };
 
 export default Home;

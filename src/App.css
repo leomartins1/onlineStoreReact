@@ -1,5 +1,18 @@
 body {
   background-color: #303030;
-  color: antiquewhite;
+  color: #fff;
   padding: 0.5rem;
+}
+
+.navBar {
+  display: inline-flex;
+  align-items: center;
+  width: 100vw;
+  justify-content: space-evenly;
+}
+
+.cartButton {
+  display: inline-flex;
+  align-items: center;
+  font-size: x-large;
 }

@@ -5,17 +5,16 @@ class Search extends React.Component {
   render() {
     const { onClick, onChange } = this.props;
     return (
-      <form className="d-flex p-2 bd-highlight">
+      <form className="">
         <label
-          className="d-flex flex-column bd-highlight mb-3"
+          className=""
           htmlFor="query-input"
           data-testid="home-initial-message"
         >
-          Digite algum termo de pesquisa ou escolha uma categoria.
-          <input type="text" data-testid="query-input" onChange={ onChange } />
+          <input type="text" placeholder="Buscar produtos e muito mais..." data-testid="query-input" onChange={ onChange } />
         </label>
         <button
-          className="align-self-center ms-2"
+          className=""
           type="button"
           onClick={ onClick }
           data-testid="query-button"

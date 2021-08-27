@@ -7,7 +7,6 @@ import ProductDetails from './components/ProductDetails';
 import Checkout from './components/Checkout';
 
 import './App.css';
-import CartButton from './components/CartButton';
 
 class App extends Component {
   constructor() {
@@ -17,14 +16,6 @@ class App extends Component {
       cartItems: [],
       counter: 0,
     };
-  }
-
-  componentDidMount() {
-    this.updateCounter();
-  }
-
-  updateCounter = () => {
-    this.setState({ counter: JSON.parse(localStorage.getItem('counter')) });
   }
 
   // https://forum.freecodecamp.org/t/update-localstorage-after-setstate-react/167754
@@ -48,11 +39,7 @@ class App extends Component {
     const { cartItems, counter } = this.state;
     return (
       <div>
-        <header className="text-center p-3 mb-2 bg-secondary text-white">
-          <h1 className="">Project Frontend Online Store</h1>
-        </header>
         <BrowserRouter>
-          <CartButton counter={ counter } />
           <Switch>
             <Route
               exact
@@ -72,6 +59,7 @@ class App extends Component {
                 { ...props }
                 addToCart={ this.addToCart }
                 countCartItems={ this.countCartItems }
+                counter={ counter }
               />) }
             />
             <Route

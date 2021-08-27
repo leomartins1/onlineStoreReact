@@ -42,14 +42,14 @@ class ProductCard extends React.Component {
       const freeShipping = <p data-testid="free-shipping">Free Shipping</p>;
       return (
         <div
-          className="card mb-3 border border-primary border-3"
+          className=""
           style={ cardStyle }
           key={ title }
           data-testid="product"
         >
-          <img className="card-img-top ratio ratio-1x1" src={ thumbnail } alt={ title } />
-          <div className="card-body">
-            <p className="card-title">{title}</p>
+          <img className="" src={ thumbnail } alt={ title } />
+          <div className="">
+            <p className="">{title}</p>
             <p>{`Price: R$ ${price}`}</p>
             {result.shipping.free_shipping ? freeShipping : null }
             <button type="button">
@@ -64,7 +64,7 @@ class ProductCard extends React.Component {
               </Link>
             </button>
             <button
-              className="btn btn-primary"
+              className=""
               type="button"
               data-testid="product-add-to-cart"
               onClick={ () => {
